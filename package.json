@@ -1,0 +1,26 @@
+{
+    "name": "rrhh-project",
+    "version": "1.0.0",
+    "description": "Proyecto de RRHH con frontend y backend",
+    "main": "index.js",
+    "scripts": {
+      "start": "concurrently \"npm run server\" \"npm run client\"",
+      "server": "cd backend && npm start",
+      "client": "cd frontend && npm start",
+      "install-all": "npm install && cd frontend && npm install && cd ../backend && npm install",
+      "build": "cd frontend && npm run build",
+      "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "keywords": [
+      "rrhh",
+      "react",
+      "node",
+      "express",
+      "mongodb"
+    ],
+    "author": "",
+    "license": "ISC",
+    "devDependencies": {
+      "concurrently": "^8.0.1"
+    }
+  }
