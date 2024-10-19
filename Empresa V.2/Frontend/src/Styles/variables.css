@@ -1,0 +1,8 @@
+:root {
+    --primary-color: #1d4ed8; /* Azul */
+    --secondary-color: #3b82f6; /* Azul claro */
+    --accent-color: #2563eb; /* Azul más oscuro */
+    --background-color: #f9fafb; /* Color de fondo */
+    --text-color: #111827; /* Color de texto */
+    --border-color: #e5e7eb; /* Color de borde */
+  }
