@@ -6,7 +6,6 @@
 @import '../Styles/global.css';
 @import '../Styles/variables.css';
 
-
 /* Estilos generales */
 body {
   font-family: 'Arial', sans-serif;
@@ -14,6 +13,9 @@ body {
   padding: 0;
   line-height: 1.6;
   background-color: #f4f4f4; /* Fondo suave */
+  font-size: 16px; /* Tamaño de fuente base */
+  color: #333; /* Color de texto general */
+  display: flexbox;
 }
 
 /* Header */
@@ -24,15 +26,19 @@ header {
   color: #f5f5dc; /* Color crema */
   padding: 20px;
   text-align: center;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra en el header */
 }
 
+/* Navegación */
 nav ul {
   list-style: none;
   padding: 0;
+  margin: 0;
+  display: flex; /* Navegación horizontal */
+  justify-content: space-between; /* Espacio entre elementos */
 }
 
 nav ul li {
-  display: inline;
   margin: 0 15px;
 }
 
@@ -40,10 +46,17 @@ nav a {
   color: #f5f5dc; /* Color crema */
   text-decoration: none;
   font-weight: bold;
+  transition: color 0.3s ease; /* Transición suave para el color de enlaces */
+}
+
+nav a:hover {
+  color: #ff5733; /* Cambiar color al pasar el mouse */
 }
 
 .logo img {
   width: 100px; /* Ajustar tamaño del logo */
+  margin: 10px; /* Espacio alrededor del logo */
+  border-radius: 50%; /* Hacer el logo circular */
 }
 
 /* Hero Section */
@@ -52,11 +65,16 @@ nav a {
   color: #f5f5dc; /* Color crema */
   text-align: center;
   padding: 100px 20px;
+  display: flex; /* Contenido en línea */
+  flex-direction: column; /* Contenido en columna */
+  align-items: center; /* Alinear contenido verticalmente */
+  justify-content: center; /* Alinear contenido horizontalmente */
 }
 
 .hero h1 {
   font-size: 2.5em;
   margin-bottom: 20px;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra en el título */
 }
 
 .hero button {
@@ -66,139 +84,132 @@ nav a {
   padding: 10px 20px;
   font-size: 1.2em;
   cursor: pointer;
+  border-radius: 5px; /* Bordes redondeados para el botón */
+  transition: background-color 0.3s ease; /* Transición suave para el color de fondo */
+}
+
+.hero button:hover {
+  background-color: rgba(255, 87, 51, 1); /* Cambiar el color al pasar el mouse */
 }
 
 /* Sección de paquetes de servicios */
 .packages {
-  padding: 50px 20px;
-  text-align: center;
-  background-color: rgba(255, 255, 255, 0.8); /* Fondo blanco con transparencia */
+    padding: 50px 20px;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.8); /* Fondo blanco con transparencia */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra en la sección */
+    display: flex; /* Usar flexbox para alinear los paquetes */
+    flex-direction: column; /* Alinear en columna para pantallas grandes */
+    align-items: center; /* Centrar los elementos en la columna */
 }
 
 .packages h2 {
-  font-size: 2em;
-  margin-bottom: 20px;
+    margin-bottom: 30px; /* Espacio debajo del título */
+    font-size: 2em; /* Tamaño del título */
 }
 
+/* Contenedor de paquetes */
+.packages-container {
+    display: flex; /* Usar flexbox para los paquetes */
+    justify-content: space-around; /* Espacio entre los elementos */
+    flex-wrap: wrap; /* Permitir que los elementos se envuelvan en varias filas */
+    width: 100%; /* Asegurar que ocupe todo el ancho */
+}
+
+/* Estilo de cada paquete */
 .package {
-  border: 1px solid rgba(204, 204, 204, 0.5); /* Borde con transparencia */
-  border-radius: 8px;
-  padding: 20px;
-  margin: 10px;
-  display: inline-block;
-  width: calc(25% - 40px); /* Cuatro columnas */
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  background-color: rgba(245, 245, 220, 0.8); /* Color crema con transparencia */
-  height: 300px; /* Altura fija para todos los paquetes */
-  text-align: left; /* Alinear texto a la izquierda */
-  vertical-align: top; /* Alinear verticalmente */
+    border: 1px solid rgba(204, 204, 204, 0.5); /* Borde con transparencia */
+    border-radius: 8px;
+    padding: 20px;
+    margin: 10px;
+    display: flex; /* Usar flexbox para el contenido interno */
+    flex-direction: column; /* Alinear contenido en columna */
+    justify-content: space-between; /* Espacio entre elementos internos */
+    width: calc(25% - 40px); /* Cuatro columnas en pantallas grandes */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    background-color: rgba(245, 245, 220, 0.8); /* Color crema con transparencia */
+    transition: transform 0.3s ease; /* Transición suave para el efecto de hover */
+    min-height: 300px; /* Altura mínima para uniformidad */
 }
 
-.package h3 {
-  color: rgba(0, 51, 102, 0.8); /* Azul corporativo con transparencia */
-}
-
-.package button {
-  background-color: rgba(255, 87, 51, 0.8); /* Rojo intenso con transparencia */
-  color: #f5f5dc; /* Color crema */
-  border: none;
-  padding: 10px 15px;
-  cursor: pointer;
-}
-
-/* Sección de testimonios */
-.testimonials {
-  padding: 50px 20px;
-  background-color: rgba(233, 236, 239, 0.8); /* Fondo gris claro con transparencia */
-  text-align: center;
-}
-
-.testimonials h2 {
-  font-size: 2em;
-  margin-bottom: 20px;
-}
-
-.testimonial {
-  margin: 20px;
-  padding: 20px;
-  background: rgba(245, 245, 220, 0.8); /* Color crema con transparencia */
-  border-radius: 8px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  display: inline-block;
-  width: calc(25% - 40px); /* Cuatro columnas */
-  vertical-align: top; /* Alinear verticalmente */
-}
-
-/* Sección de testimonios (continuación) */
-.testimonial img {
-  width: 80px; /* Ajustar tamaño de la imagen del testimonio */
-  border-radius: 50%; /* Hacer la imagen circular */
-  margin-bottom: 10px; /* Espacio debajo de la imagen */
-}
-
-.testimonial p {
-  font-style: italic; /* Estilo de texto en cursiva */
-  color: rgba(0, 51, 102, 0.7); /* Color del texto con transparencia */
-}
-
-/* Footer */
-footer {
-  background-color: #003366; /* Azul corporativo */
-  color: #f5f5dc; /* Color crema */
-  padding: 20px;
-  text-align: center;
-  position: relative; /* Posicionamiento relativo para el contenido */
-}
-
-footer .contact-info, footer .social-media {
-  margin-bottom: 20px;
-}
-
-footer a {
-  color: #f5f5dc; /* Color crema */
-  text-decoration: none;
-}
-
-footer a:hover {
-  text-decoration: underline; /* Subrayar enlaces al pasar el mouse */
-}
-
-/* Botones de acción */
-button {
-  border-radius: 5px; /* Bordes redondeados para todos los botones */
-  transition: background-color 0.3s ease; /* Transición suave para el color de fondo */
-}
-
-button:hover {
-  background-color: rgba(255, 87, 51, 1); /* Cambiar el color al pasar el mouse */
-}
-
-/* Estilos para enlaces */
-a {
-  transition: color 0.3s ease; /* Transición suave para el color de enlaces */
-}
-
-a:hover {
-  color: #ff5733; /* Cambiar color al pasar el mouse */
+.package:hover {
+    transform: scale(1.05); /* Aumentar el tamaño al pasar el mouse */
 }
 
 /* Responsividad */
 @media (max-width: 768px) {
-  .package, .testimonial {
-      width: calc(100% - 40px); /* Una columna en pantallas pequeñas */
-  }
-  
-  nav ul li {
-      display: block; /* Navegación vertical en móviles */
-      margin: 10px 0;
-  }
-  
-  .hero h1 {
-      font-size: 2em; /* Ajustar tamaño de fuente en móviles */
-  }
-  
-  .hero button {
-      font-size: 1em; /* Ajustar tamaño de botón en móviles */
-      padding: 8px 15px; /* Ajustar padding del botón en móviles */
-  }
+    .packages {
+        flex-direction: column; /* Alinear en columna en móviles */
+    }
+
+    .packages-container {
+        flex-direction: row; /* Alinear en fila en móviles */
+        justify-content: center; /* Centrar los paquetes en móviles */
+    }
+
+    .package {
+        width: calc(90% - 20px); /* Una columna en móviles */
+    }
+}
+
+/* Footer */
+footer {
+    background-color: #003366; /* Azul corporativo */
+    color: #f5f5dc; /* Color crema */
+    padding: 20px;
+    text-align: center;
+    position: relative; /* Posicionamiento relativo para el contenido */
+}
+
+footer .contact-info, footer .social-media {
+    margin-bottom: 20px;
+}
+
+footer a {
+    color: #f5f5dc; /* Color crema */
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline; /* Subrayar enlaces al pasar el mouse */
+}
+
+/* Botones de acción */
+button {
+    border-radius: 5px; /* Bordes redondeados para todos los botones */
+    transition: background-color 0.3s ease; /* Transición suave para el color de fondo */
+}
+
+button:hover {
+    background-color: rgba(255, 87, 51, 1); /* Cambiar el color al pasar el mouse */
+}
+
+/* Estilos para enlaces */
+a {
+    transition: color 0.3s ease; /* Transición suave para el color de enlaces */
+}
+
+a:hover {
+    color: #ff5733; /* Cambiar color al pasar el mouse */
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+    .package, .testimonial {
+        width: calc(100% - 40px); /* Una columna en pantallas pequeñas */
+    }
+    
+    nav ul li {
+        display: block; /* Navegación vertical en móviles */
+        margin: 10px 0;
+    }
+    
+    .hero h1 {
+        font-size: 2em; /* Ajustar tamaño de fuente en móviles */
+    }
+    
+    .hero button {
+        font-size: 1em; /* Ajustar tamaño de botón en móviles */
+        padding: 8px 15px; /* Ajustar padding del botón en móviles */
+    }
 }
